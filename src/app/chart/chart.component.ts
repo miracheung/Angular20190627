@@ -25,7 +25,6 @@ export class ChartComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.typeOfChart = params.get("typeOfChart");
-      // console.log(this.typeOfChart);
       this.constructChart(this.typeOfChart);
     });
   }
