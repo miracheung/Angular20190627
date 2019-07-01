@@ -1,0 +1,38 @@
+<h1>Products</h1>
+<div class="buttons">
+  <button [routerLink]="['/product/new']">Add</button>
+</div>
+<table class = "table table-bordered">
+    <thead>
+      <tr>
+          <th>id</th>
+          <th>description</th>
+          <th>amount</th>
+          <th>type</th>
+          <th>date</th>
+          <th>Edit or Delete</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <tr *ngFor = "let p of product_list; let i = index">
+        <td (click) = "onSelect(p)" class="product_id">{{p.id}}</td>
+        <td (click) = "onSelect(p)" class="product_title" >{{p.description | capitalize}}</td>
+        <td>{{p.amount | currency: "USD"}}</td>
+        <td>{{p.type | capitalize}}</td>
+        <td>{{p.date}}</td>
+        <td>
+          <button class="btn btn-primary" (click)="edit(p)">Edit</button>
+          <button class="btn btn-danger" (click)="delete(p)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+</table>
+
+<div class="buttons">
+  <button (click)="chart('pie')">Pie Chart</button>
+  <button (click)="chart('bar')">Bar Chart</button>
+</div>
+
+
+

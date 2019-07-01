@@ -1,0 +1,29 @@
+<div class="detail">
+  <h2>You selected transaction with id = {{product.id}}, transaction details:</h2>
+  <h3>Transaction Id: {{product.id}}</h3>
+  <h3>Transaction description: {{product.description | capitalize}}</h3>
+  <h3>Transaction amount: {{product.amount | currency: 'USD'}}</h3>
+  <h3>Transaction type: {{product.type | capitalize}}</h3>
+  <h3>Transaction date: {{product.date}}</h3>
+  <br>
+  <!-- <p>
+    <button (click)="goPrevious()">Previous</button>
+    <button (click)="goNext()">Next</button>
+  </p> -->
+  <br>
+    <button (click)="gotoProduct()" class="goback">Back</button>
+</div>
+
+
+
+
+    <!-- <router-outlet></router-outlet> -->
+<!-- 
+    <p>
+      <button (click)="goPrevious()">Previous</button>
+      <button (click)="goNext()">Next</button>
+    </p>
+    
+    <div>
+      <button (click)="gotoProduct()">Back</button>
+    </div> -->

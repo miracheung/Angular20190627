@@ -1,0 +1,12 @@
+/* table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}
+table {
+    margin: 10px auto;
+}
+td.product_id:hover, td.product_title:hover {
+    cursor: pointer;
+    color: blue;
+} */

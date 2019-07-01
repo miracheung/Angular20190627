@@ -1,0 +1,88 @@
+<div class="container-fluid">
+    <h2>{{ title }}</h2>
+  
+    <form
+      #userForm="ngForm"
+      *ngIf="!submitted"
+      (ngSubmit)="onSubmit(userForm)"
+      novalidate
+    >
+      <div class="form-group">
+        <label>ID</label>
+        <input
+          type="number"
+          #id="ngModel"
+          required
+          class="form-control"
+          [class.is-invalid]="id.invalid && id.touched"
+          name="id"
+          [(ngModel)]="productModel.id"
+        />
+        <small class="text-danger" [class.d-none]="id.valid || id.untouched"
+          >ID is required</small
+        >
+      </div>
+  
+      <div class="form-group">
+        <label>Description</label>
+        <input
+          type="text"
+          #title="ngModel"
+          required
+          class="form-control"
+          name="description"
+          [(ngModel)]="productModel.description"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label>Amount</label>
+        <input
+          type="number"
+          #price="ngModel"
+          required
+          class="form-control"
+          name="amount"
+          [class.is-invalid]="price.invalid && price.touched"
+          [(ngModel)]="productModel.amount"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label>Type</label>
+        <input
+          type="text"
+          #rating="ngModel"
+          required
+          class="form-control"
+          name="type"
+          [class.is-invalid]="type.invalid && type.touched"
+          [(ngModel)]="productModel.type"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label>Date</label>
+        <input
+          type="text"
+          #description="ngModel"
+          required
+          class="form-control"
+          name="date"
+          [class.is-invalid]="date.invalid && date.touched"
+          [(ngModel)]="productModel.date"
+        />
+      </div>
+  
+      <button
+        class="btn btn-primary"
+        [disabled]="userForm.form.invalid"
+        type="submit"
+      >
+        Submit form
+      </button>
+    </form>
+    <div class="alert alert-danger" *ngIf="errorMsg">
+      {{ errorMsg }}
+    </div>
+  </div>
